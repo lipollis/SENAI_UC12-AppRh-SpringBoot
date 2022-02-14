@@ -85,8 +85,8 @@
 			<br>
 
 			<div class="form-group">
-				<label for=""><b>Nome do funcionário:</b> </label> <input
-					type="text" class="form-control" value="" name="nome" required
+				<label for="nome"><b>Nome do funcionário:</b> </label> <input
+					id="nome" type="text" class="form-control" value="" name="nome" required
 					th:attr="value = ${funcionario.nome}" /> <small
 					class="form-text text-muted"><i>* Utilize nomes e
 						termos mais utilizados no mercado.</i></small>
@@ -97,8 +97,8 @@
 
 				<div class="col">
 					<div class="form-group">
-						<label for=""><b>Data de nascimento:</b></label> <input
-							type="date" class="form-control" value="" name="data" required
+						<label for="data"><b>Data de nascimento:</b></label> <input
+							id="data" type="date" class="form-control" value="" name="data" required
 							th:attr="value = ${funcionario.data}" /><small
 							class="form-text text-muted"><i>* Data de nascimento.</i></small>
 					</div>
@@ -106,7 +106,7 @@
 				<div class="col">
 
 					<div class="form-group">
-						<label for=""><b>E-mail:</b></label><input type="text"
+						<label for="email"><b>E-mail:</b></label><input id="email" type="text"
 							class="form-control" value="" name="email" required
 							th:attr="value = ${funcionario.email}" /><small
 							class="form-text text-muted"><i>* email@email.com</i></small>
