@@ -15,7 +15,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 		
 		builder
 		.inMemoryAuthentication()
-		.withUser("arthur").password("{noop}arthur").roles("USER")
+		.withUser("aline").password("{noop}aline").roles("USER")
 		.and().withUser("root").password("{noop}root").roles("ADMIN");
 		
 	}
