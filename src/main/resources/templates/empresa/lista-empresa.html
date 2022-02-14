@@ -55,10 +55,10 @@
                         <li class="nav-item"><a class="nav-link" href="/cadastrarVaga">
                                 << Cadastrar Vaga>>
                             </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">
+                        <li class="nav-item"><a class="nav-link" href="/empresas">
                                 << Listar Empresas>>
                             </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">
+                        <li class="nav-item"><a class="nav-link" href="/cadastrarEmpresa">
                                 << Cadastrar Empresa>>
                             </a></li>
                         <li class="nav-item"><a class="nav-link" href="/logout">Sair
@@ -79,28 +79,38 @@
 
         <table class="table table-hover table-responsive w-auto table-striped">
             <thead>
-                <tr>
+                <tr >
                     <th scope="col">Nome da empresa:</th>
                     <th scope="col">CNPJ:</th>
                     <th scope="col">E-mail:</th>
                     <th scope="col">Telefone:</th>
                     <th scope="col">Responsável:</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+					<th scope="col"></th>
+					<th scope="col">Ação</th>
+					<th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><span></span></td>
-                    <td><span></span></td>
-                    <td><span></span></td>
-                    <td><span></span></td>
-                    <td><span></span></td>
-                    <td><a href="#" class="waves-effect waves-light btn-small"><button type="button"
-                                class="btn btn-danger">Excluir</button></a></td>
-                    <td><a href="#"><button type="button" class="btn btn-primary">Editar</button></a></td>
+                <tr th:each="empresa : ${empresas}">
 
 
+                    <td><a
+						th:href="${(#mvc.url('FC#detalhesEmpresa').arg(0, empresa.id)).build()}">
+                        <span th:text="${empresa.nome}"></span></a></td>
+					<td><span th:text="${empresa.cnpj}"></span></td>
+					<td><span th:text="${empresa.email}"></span></td>
+                    <td><span th:text="${empresa.telefone}"></span></td>
+                    <td><span th:text="${empresa.responsavel}"></span></td>
+					<td><a
+						th:href="${(#mvc.url('FC#deletarEmpresa').arg(0, empresa.id)).build()}"
+						class="waves-effect waves-light btn-small"><button
+								type="button" class="btn btn-danger">Excluir</button></a></td>
+					<td><a
+						th:href="${(#mvc.url('FC#editarEmpresa').arg(0, empresa.id)).build()}"><button
+								type="button" class="btn btn-primary">Editar</button></a></td>
+                    <td><a
+                        th:href="${(#mvc.url('FC#detalhesEmpresa').arg(0, empresa.id)).build()}"><button
+                                type="button" class="btn btn-success"> Detalhes </button></a></td>
 
                 </tr>
             </tbody>

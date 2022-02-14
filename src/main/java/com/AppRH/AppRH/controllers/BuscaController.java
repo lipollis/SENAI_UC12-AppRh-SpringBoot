@@ -13,6 +13,7 @@ import com.AppRH.AppRH.models.Candidato;
 import com.AppRH.AppRH.models.Dependente;
 import com.AppRH.AppRH.models.Funcionario;
 import com.AppRH.AppRH.models.Vaga;
+import com.AppRH.AppRH.models.Empresa;
 
 @Controller
 public class BuscaController {

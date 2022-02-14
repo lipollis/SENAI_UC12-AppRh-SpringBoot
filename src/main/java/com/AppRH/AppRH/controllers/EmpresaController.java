@@ -1,19 +1,18 @@
 package com.AppRH.AppRH.controllers;
 
-import com.AppRH.AppRH.models.Dependente;
 import com.AppRH.AppRH.models.Empresa;
-import com.AppRH.AppRH.models.Funcionario;
 import com.AppRH.AppRH.repository.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.validation.Valid;
 
+@Controller
 public class EmpresaController {
 
     @Autowired
@@ -46,6 +45,17 @@ public class EmpresaController {
         Iterable<Empresa> empresas = er.findAll();
         mv.addObject("empresas", empresas);
         return mv;
+    }
+
+    // GET que lista dependentes e detalhes dos funcionário
+    @RequestMapping("/detalhes-empresa/{id}")
+    public ModelAndView detalhesEmpresa(@PathVariable("id") long id) {
+        Empresa empresa = er.findById(id);
+        ModelAndView mv = new ModelAndView("empresa/detalhes-empresa");
+        mv.addObject("empresa", empresa);
+
+        return mv;
+
     }
 
     //GET que deleta empresa

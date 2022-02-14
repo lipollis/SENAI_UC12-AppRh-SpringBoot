@@ -1,10 +1,14 @@
 package com.AppRH.AppRH.models;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-public class Empresa {
+public class Empresa implements Serializable{
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
