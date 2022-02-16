@@ -95,21 +95,21 @@
 
 
                     <td><a
-						th:href="${(#mvc.url('FC#detalhesEmpresa').arg(0, empresa.id)).build()}">
+						th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresa.id)).build()}">
                         <span th:text="${empresa.nome}"></span></a></td>
 					<td><span th:text="${empresa.cnpj}"></span></td>
 					<td><span th:text="${empresa.email}"></span></td>
                     <td><span th:text="${empresa.telefone}"></span></td>
                     <td><span th:text="${empresa.responsavel}"></span></td>
 					<td><a
-						th:href="${(#mvc.url('FC#deletarEmpresa').arg(0, empresa.id)).build()}"
+						th:href="${(#mvc.url('EC#deletarEmpresa').arg(0, empresa.id)).build()}"
 						class="waves-effect waves-light btn-small"><button
 								type="button" class="btn btn-danger">Excluir</button></a></td>
 					<td><a
-						th:href="${(#mvc.url('FC#editarEmpresa').arg(0, empresa.id)).build()}"><button
+						th:href="${(#mvc.url('EC#editarEmpresa').arg(0, empresa.id)).build()}"><button
 								type="button" class="btn btn-primary">Editar</button></a></td>
                     <td><a
-                        th:href="${(#mvc.url('FC#detalhesEmpresa').arg(0, empresa.id)).build()}"><button
+                        th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresa.id)).build()}"><button
                                 type="button" class="btn btn-success"> Detalhes </button></a></td>
 
                 </tr>
