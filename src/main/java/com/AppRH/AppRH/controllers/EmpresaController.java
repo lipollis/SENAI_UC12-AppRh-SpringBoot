@@ -47,7 +47,7 @@ public class EmpresaController {
         return mv;
     }
 
-    // GET que lista dependentes e detalhes dos funcionário
+    // GET que lista os detalhes das empresas
     @RequestMapping("/detalhes-empresa/{id}")
     public ModelAndView detalhesEmpresa(@PathVariable("id") long id) {
         Empresa empresa = er.findById(id);
